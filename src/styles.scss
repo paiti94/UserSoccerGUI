@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+// @import '~jquery-ui/themes/base/all';
+@import '~datatables.net-dt/css/jquery.dataTables.css';
+/* Base */
+@import "./_site-base.scss";
+
+/* Navbar */
+@import "./_site-navbar.scss";
+
+/* Blocks */
+@import "./_site-blocks.scss";

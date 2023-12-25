@@ -1,0 +1,160 @@
+
+    <body>
+        <div class="site-wrap">
+            <header class="site-navbar py-4" role="banner">
+        <app-navbar></app-navbar>
+        </header>
+            <div class="hero overlay" style="background-image: url('assets/img/bg_3.jpg');">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 ml-auto">
+                            <h1 class="text-white">USESOCCER</h1>
+                    <p>최애 축구선수 이상형 월드컵</p>
+                            <div id="date-countdown"></div>
+                            <p>
+                                <a href="#" class="more light">Learn More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+
+        <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+         <div class="row align-items-center" style="margin-top: 300px;">
+              <div class="col-sm-9">
+                <label style="color: white;"><b>총 라운드를 선택하세요</b></label>
+                <select style=" width: 500px;color: black !important;background-color: white;" [(ngModel)]="selRound" class="form-control" id="selRound" name="64">
+                    <option value="64">64강</option>
+                    <option value="32">32강</option>
+                    <option value="16">16강</option>
+                    <option value="8">8강</option>
+                    <option value="4">4강</option>
+                </select>
+                <br>
+                <button (click)="match(selRound)" type="submit" id="rstart" class="btn btn-primary col-xs-8">시작하기</button>
+                <a routerLink="/main" class="btn btn-white col-xs-3 cancel">취소</a>
+            </div>
+        </div>
+        </div>
+        <div *ngIf="matchPlayerList.length!=0 && final.name==''" class="container" >
+            <h4>당신의 최애선수는 누구인가요?</h4>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="d-flex team-vs">
+                    <!-- <h1>{{this.round}}</h1> -->
+                  <span class="score">VS</span>
+                  <div class="team-1 w-100">
+                    <div class="team-details w-300 text-center">
+                        <img [src]="currentPair[0].strCutout" alt="Side Image" class="img-fluid"  (click)="selectImage(0)" [ngClass]="{ selected: 0 === selectedIndex }" /> 
+                       <h3>{{currentPair[0].name}}</h3> 
+                     
+                    
+                    </div>
+                  </div>
+                  <div class="team-2 w-100">
+                    <div class="team-details w-300 text-center">
+                       <img [src]="currentPair[1].strCutout" alt="Side Image" class="img-fluid"  (click)="selectImage(1)" [ngClass]="{ selected: 1 === selectedIndex }" /> 
+                      <h3>{{currentPair[1].name}}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="final.name!=''" class="container" >
+        <div class="row">
+            <div class="col-lg-12" >
+                <div class="d-flex win-team">
+                    <div class="team-1 w-100">
+                        <div class="team-details w-300 text-center">
+                             <img [src]=final.strCutout alt="Side Image" class="img-fluid side-image" style="width:700px !important;" >
+                        </div>
+                        <div class="team-2 w-100">
+                            <div class="team-details w-300 text-center">
+                                <h4 style="color:aliceblue">당신이 선택한 최종의 선수는, {{final.name}} 입니다</h4>
+                                <!-- <div *ngIf="playerDetails.idTeam!='' && playerDetails.strPlayer == final.name"> -->
+                                    <h5 style="color:aliceblue">Player's Team : {{final.team}}</h5>
+                                    <p style="color:aliceblue">{{final.strDescriptionEN}}</p>
+                                    <p style="color:aliceblue"> <a style="color:aliceblue; text-decoration: underline;" (click)="openExternalLink(final.strInstagram)" target="_blank">{{final.strInstagram}}</a></p>
+                                    <ng-container *ngFor="let match of matchforTeam">
+                                        <h6 style="color:aliceblue">{{match.strEvent}}</h6>
+                                    </ng-container>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="widget mb-3">
+                        <h3>News</h3>
+                        <ul class="list-unstyled links">
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">Club News</a></li>
+                            <li><a href="#">Media Center</a></li>
+                            <li><a href="#">Video</a></li>
+                            <li><a href="#">RSS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="widget mb-3">
+                        <h3>Matches</h3>
+                        <ul class="list-unstyled links">
+                            <li><a href="#">Standings</a></li>
+                            <li><a href="#">World Cup</a></li>
+                            <li><a href="#">La Lega</a></li>
+                            <li><a href="#">Hyper Cup</a></li>
+                            <li><a href="#">World League</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="widget mb-3">
+                        <h3>Social</h3>
+                        <ul class="list-unstyled links">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class=" pt-5">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="icon-heart"
+                                                                                          aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/custom.js"></script>
+  </body>

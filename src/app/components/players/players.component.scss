@@ -1,0 +1,105 @@
+.site-logo {
+	position: relative;
+	font-weight: 900;
+	font-size: 1.3rem;
+	a {
+		color: white;
+	}
+}
+
+  .hero {
+            min-height: 500px; /* Adjust the height as needed */
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ffffff; /* Set your desired text color */
+        }
+
+        .hero .form-group {
+            margin-bottom: 20px;
+        }
+
+        body {
+            line-height: 1.7;
+            color: lighten(black, 50%);
+            font-weight: 300;
+            
+            background-color: #222831;
+            font-size: 16px;
+          }
+          ::-moz-selection { 
+            background: black;
+            color: white;
+          }
+          ::selection { 
+            background: black;
+            color: white;
+          }
+          a {
+            transition: .3s all ease;
+            &:hover {
+              text-decoration: none;
+            }
+ }        
+
+ /* app.component.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Add some responsiveness for smaller screens */
+@media screen and (max-width: 600px) {
+  th, td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  th, td {
+    text-align: center;
+  }
+}

@@ -1,0 +1,61 @@
+
+
+.img-fluid {
+    width: 500px; /* Set your desired width */
+    height: 500px; /* Set your desired height */
+    object-fit: cover; /* This property ensures the image maintains its aspect ratio while covering the specified dimensions */
+  }
+  
+  .side-image {
+  //  margin-right: 10px; /* Optional: Add some margin between the images */
+  }
+  
+  .vs-image {
+    width: 50px; /* Set your desired width for the VS image */
+    height: 50px; /* Set your desired height for the VS image */
+  }
+
+    .hero {
+              min-height: 500px; /* Adjust the height as needed */
+              background-size: cover;
+              background-position: center center;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+  
+          .hero h1 {
+              font-size: 3.5rem;
+          }
+  
+          .hero p {
+              font-size: 1.25rem;
+              color: #ffffff; /* Set your desired text color */
+          }
+  
+          .hero .form-group {
+              margin-bottom: 20px;
+          }
+ body {
+            line-height: 1.7;
+            color: lighten(black, 50%);
+            font-weight: 300;
+            
+            background-color: #222831;
+            font-size: 16px;
+          }
+          ::-moz-selection { 
+            background: black;
+            color: white;
+          }
+          ::selection { 
+            background: black;
+            color: white;
+          }
+          a {
+            transition: .3s all ease;
+            &:hover {
+              text-decoration: none;
+            }
+ }

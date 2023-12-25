@@ -1,0 +1,49 @@
+# Node.js dependencies
+/node_modules
+
+# Compiled output
+/dist
+/*.d.ts
+
+# IDE and editor files
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw??
+.DS_Store
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Angular-specific files
+/.angular
+/angular.json
+/tsconfig.json
+/tsconfig.app.json
+/tsconfig.spec.json
+/e2e/protractor.conf.js
+/e2e/protractor.log
+/e2e/screenshots/
+/e2e/videos/
+
+# Testing
+/coverage
+/test-results
+
+# Environment configurations
+/src/environments/*.ts
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Local build artifacts
+/dist/
+/node_modules/
+
